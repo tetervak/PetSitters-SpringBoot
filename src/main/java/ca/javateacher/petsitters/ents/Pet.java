@@ -10,6 +10,7 @@ import javax.validation.constraints.Size;
 /**
  * Created by iuliana.cosmina on 2/7/16.
  */
+@SuppressWarnings("ALL")
 @Entity
 @Table(name = "P_PET")
 public class Pet extends AbstractEntity {
