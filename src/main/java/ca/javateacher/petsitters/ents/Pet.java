@@ -48,7 +48,7 @@ public class Pet extends AbstractEntity {
     private String rfid;
 
     @ManyToMany(mappedBy = "pets", cascade=CascadeType.MERGE)
-    private List<Request> request;
+    private List<Request> requests;
 
     //required by JPA
     public Pet() {
