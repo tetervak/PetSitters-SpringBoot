@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 /**
  * Created by iuliana.cosmina on 2/7/16.
@@ -45,6 +46,9 @@ public class Pet extends AbstractEntity {
     @Column
     @Size(min = 10, max = 100)
     private String rfid;
+
+    @ManyToMany(mappedBy = "pets", cascade=CascadeType.MERGE)
+    private List<Request> request;
 
     //required by JPA
     public Pet() {

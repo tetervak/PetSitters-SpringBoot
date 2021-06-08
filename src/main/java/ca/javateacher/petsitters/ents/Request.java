@@ -48,7 +48,10 @@ public class Request extends AbstractEntity {
     private RequestStatus requestStatus;
 
     @JsonIgnore
-    @OneToMany
+    @ManyToMany
+    @JoinTable(name="P_REQUEST_PET",
+            joinColumns = {@JoinColumn(name="REQUEST_ID", referencedColumnName = "ID")},
+            inverseJoinColumns = {@JoinColumn(name="PET_ID", referencedColumnName = "ID")})
     private Set<Pet> pets = new HashSet<>();
 
     @Size(max = 500)
